@@ -1,1 +1,1 @@
-link: https://kilow13.github.io/gpump/
+link: https://kilow13.github.io/cpump/
