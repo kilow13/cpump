@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto_PUMP - $CPUMP</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+  <style>
+    /* Base */
+    body {
+      margin: 0;
+      padding: 0;
+      /* Imposta l'immagine di sfondo */
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      /* Sovrapposizione per rendere il testo leggibile */
+      background-color: rgba(0, 0, 0, 0.7);
+      background-blend-mode: darken;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+    header img {
+      width: 100px;
+      border-radius: 50%; /* Rende l'immagine rotonda */
+      transition: transform 0.3s ease;
+    }
+    header img:hover {
+      transform: rotateY(360deg);
+    }
+    header h2 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0, 255, 255, 0.7);
+    }
+    /* Hero Section */
+    .hero {
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #0ff;
+      text-shadow: 4px 4px 12px rgba(0, 255, 255, 0.8);
+      transform: perspective(500px) rotateX(5deg);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #ddd;
+      text-shadow: 1px 1px 5px rgba(255, 0, 255, 0.3);
+    }
+    /* Section styling */
+    section {
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      margin: 20px 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #ff0;
+      text-shadow: 3px 3px 10px rgba(255, 255, 0, 0.7);
+      transform: perspective(500px) rotateX(3deg);
+    }
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+ /* Wallet Button */
+    .wallet-btn {
+      background: #0ff;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      margin-left: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .wallet-btn:hover {
+      background: #ff0;
+      transform: scale(1.1);
+    }
+        /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background-color: #222;
+      margin: 10% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+    .modal-content h3 {
+      color: #0ff;
+    }
+    .modal-content a {
+      color: #0ff;
+      text-decoration: none;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #fff;
+   
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Crypto_PUMP Logo" />
+    <h2>$CPUMP</h2>
+  </header>
+  <div class="hero">
+    <h1>Welcome to Crypto_PUMP</h1>
+    <p>
+      The token that watches the market. Our token leverages the energy and creativity of its community, turning viral trends into real-world value. Every meme, every share, and every conversation contributes to its evolution, ensuring that growth is driven by its most passionate supporters. By embracing transparency, decentralization, and innovation, we’re creating a platform where humor meets financial empowerment. Join us on this exciting journey where your engagement fuels our collective success, and every member has a stake in our expanding ecosystem.
+    </p>
+  </div>
+  <section>
+    <h2>About $CPUMP</h2>
+    <p>A meme token with a vision for growth.</p>
+    <p>CA: 4sczTxVDaJgk9FQdu6RqKrtE9f8v6pYufB3MjZUfpump</p>
+  </section>
+  <section>
+    <h2>Tokenomics</h2>
+    <p>Total Supply: [1,000,000] <br> Distribution: [100%]</p>
+  </section>
+  <section>
+    <h2>How to Buy</h2>
+    <p>
+      1. Set up a wallet. <br>
+      2. Buy. <br>
+      3. HODL and watch.<br>
+ <button class="wallet-btn" id="walletButton">Wallet List</button> 
+    </p>
+  </section>
+  <footer>
+    <p>
+      Follow us: <a href="#">Twitter</a> | <a href="#">Telegram</a> <br>
+      © 2025 Crypto_PUMP
+    </p>
+  </footer>
+ <!-- Modal -->
+  <div id="walletModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3>Wallet Solana</h3>
+      <ul>
+        <li><a href="https://phantom.app/" target="_blank">Phantom</a></li>
+        <li><a href="https://solflare.com/" target="_blank">Solflare</a></li>
+        <li><a href="https://www.sollet.io/" target="_blank">Sollet</a></li>
+        <li><a href="https://mathwallet.org/" target="_blank">MathWallet</a></li>
+      </ul>
+    </div>
+  </div>
+<script>
+    // Apertura e chiusura modal con pulsante
+    document.getElementById("walletButton").addEventListener("click", function() {
+      document.getElementById("walletModal").style.display = "block";
+    });
+
+    document.getElementById("closeModal").addEventListener("click", function() {
+      document.getElementById("walletModal").style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+      if (event.target == document.getElementById("walletModal")) {
+        document.getElementById("walletModal").style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
